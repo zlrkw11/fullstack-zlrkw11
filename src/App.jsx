@@ -8,13 +8,13 @@ const App = () => {
   return (
     <div>
       <div>{counter}</div>
-      
-      //plus button 
+
+      {/*plus button*/}
       <button onClick={()=>setCounter(counter+1)}> 
         plus
       </button>
       
-      //resets button
+      {/*reset button*/}
       <button onClick={()=>setCounter(0)}>
         zero
       </button>
