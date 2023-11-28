@@ -4,28 +4,45 @@ const App = () => {
   const [counter, setCounter] = useState(0)
 
   const increaseByOne = () => setCounter(counter+1)
+  const decreaseByOne = () => setCounter(counter-1)
   const setToZero = () => setCounter(0)
 
-  {/*Passing state*/}
+  {/*displayer for counter, used as a passing state*/}
   const Display = (props) => {
     return (
       <div>{props.counter}</div>
     )
   }
 
+  const Button = (props) => {
+    return (
+      <button onClick={props.onClick}>
+        {props.text}
+      </button>
+    )
+  }
+
   return (
     <div>
-      <div>{counter}</div>
+      <Display counter={counter}/>
 
       {/*plus button*/}
-      <button onClick={increaseByOne}> 
-        plus
-      </button>
+      <Button 
+        onClick={increaseByOne} 
+        text = 'plus'
+      />
       
-      {/*reset button*/}
-      <button onClick={setToZero}>
-        zero
-      </button>
+      {/*minus button*/}
+      <Button 
+        onClick={decreaseByOne}
+        text = 'minus'
+      />
+      
+      {/*zero button*/}
+      <Button 
+        onClick={setToZero}
+        text = 'zero'
+      />
 
     </div>
     
